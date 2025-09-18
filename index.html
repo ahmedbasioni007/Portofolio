@@ -27,9 +27,12 @@
         }
 
         body {
+            background: #2c3e50;
+            background: -webkit-linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #3498db 50%, #2980b9 75%, #1e3c72 100%);
+            background: -moz-linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #3498db 50%, #2980b9 75%, #1e3c72 100%);
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #3498db 50%, #2980b9 75%, #1e3c72 100%);
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
             overflow-x: hidden;
             color: white;
@@ -42,6 +45,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background: -webkit-radial-gradient(circle at 20% 80%, rgba(52, 73, 94, 0.4) 0%, transparent 50%), 
+                        -webkit-radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%), 
+                        -webkit-radial-gradient(circle at 40% 40%, rgba(41, 128, 185, 0.2) 0%, transparent 50%);
+            background: -moz-radial-gradient(circle at 20% 80%, rgba(52, 73, 94, 0.4) 0%, transparent 50%), 
+                        -moz-radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%), 
+                        -moz-radial-gradient(circle at 40% 40%, rgba(41, 128, 185, 0.2) 0%, transparent 50%);
             background: radial-gradient(circle at 20% 80%, rgba(52, 73, 94, 0.4) 0%, transparent 50%), 
                         radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.3) 0%, transparent 50%), 
                         radial-gradient(circle at 40% 40%, rgba(41, 128, 185, 0.2) 0%, transparent 50%);
@@ -50,7 +59,9 @@
         }
 
         .glass-card {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.12);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
@@ -58,6 +69,12 @@
             margin-bottom: 2rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(20px)) {
+            .glass-card {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .glass-card:hover {
@@ -79,6 +96,9 @@
             border: 4px solid var(--amazon-orange);
             box-shadow: 0 8px 32px rgba(255, 153, 0, 0.3);
             margin: 0 auto 2rem;
+            background: #ff9900;
+            background: -webkit-linear-gradient(135deg, var(--amazon-orange), var(--info-blue));
+            background: -moz-linear-gradient(135deg, var(--amazon-orange), var(--info-blue));
             background: linear-gradient(135deg, var(--amazon-orange), var(--info-blue));
             display: flex;
             align-items: center;
@@ -96,6 +116,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
+            background: -webkit-linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: -moz-linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transform: rotate(45deg);
             animation: shine 3s infinite;
@@ -112,10 +134,14 @@
             font-weight: 800;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: white;
+            background: -webkit-linear-gradient(135deg, white, var(--amazon-orange));
+            background: -moz-linear-gradient(135deg, white, var(--amazon-orange));
             background: linear-gradient(135deg, white, var(--amazon-orange));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: white; /* Fallback for Safari */
         }
 
         .hero-subtitle {
@@ -133,7 +159,9 @@
         }
 
         .contact-link {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.15);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
@@ -145,6 +173,12 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+        
+        @supports not (backdrop-filter: blur(10px)) {
+            .contact-link {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .contact-link:hover {
@@ -172,6 +206,9 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
+            background: #ff9900;
+            background: -webkit-linear-gradient(90deg, transparent, var(--amazon-orange), transparent);
+            background: -moz-linear-gradient(90deg, transparent, var(--amazon-orange), transparent);
             background: linear-gradient(90deg, transparent, var(--amazon-orange), transparent);
         }
 
@@ -184,12 +221,20 @@
         }
 
         .skill-category {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 1.5rem;
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(15px)) {
+            .skill-category {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .skill-category:hover {
@@ -210,7 +255,9 @@
         }
 
         .skill-tag {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 8px 16px;
@@ -219,6 +266,12 @@
             font-weight: 500;
             color: white;
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(10px)) {
+            .skill-tag {
+                background: rgba(44, 62, 80, 0.8);
+            }
         }
 
         .skill-tag:hover {
@@ -238,19 +291,30 @@
             top: 0;
             bottom: 0;
             width: 2px;
+            background: #ff9900;
+            background: -webkit-linear-gradient(180deg, var(--amazon-orange), var(--info-blue));
+            background: -moz-linear-gradient(180deg, var(--amazon-orange), var(--info-blue));
             background: linear-gradient(180deg, var(--amazon-orange), var(--info-blue));
         }
 
         .experience-item {
             position: relative;
             margin-bottom: 2rem;
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 1.5rem;
             margin-left: 1rem;
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(15px)) {
+            .experience-item {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .experience-item::before {
@@ -278,7 +342,9 @@
         }
 
         .project-card {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
@@ -289,6 +355,12 @@
             width: 100%;
             margin-bottom: 2rem;
         }
+        
+        @supports not (backdrop-filter: blur(15px)) {
+            .project-card {
+                background: rgba(44, 62, 80, 0.9);
+            }
+        }
 
         .project-card::before {
             content: '';
@@ -297,6 +369,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
+            background: -webkit-linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: -moz-linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.6s;
         }
@@ -411,12 +485,20 @@
 
         .education-card {
             text-align: center;
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             padding: 2rem;
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(15px)) {
+            .education-card {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .education-card:hover {
@@ -430,7 +512,9 @@
             right: 2rem;
             transform: translateY(-50%);
             z-index: 1000;
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 25px;
@@ -441,6 +525,12 @@
             width: 60px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow: hidden;
+        }
+        
+        @supports not (backdrop-filter: blur(15px)) {
+            .floating-nav {
+                background: rgba(44, 62, 80, 0.9);
+            }
         }
 
         .floating-nav:hover {
@@ -521,6 +611,8 @@
             left: 50%;
             width: 40px;
             height: 40px;
+            background: -webkit-radial-gradient(circle, rgba(255, 153, 0, 0.1), transparent);
+            background: -moz-radial-gradient(circle, rgba(255, 153, 0, 0.1), transparent);
             background: radial-gradient(circle, rgba(255, 153, 0, 0.1), transparent);
             border-radius: 50%;
             transform: translate(-50%, -50%);
@@ -531,6 +623,8 @@
         .floating-nav:hover::before {
             width: 180px;
             height: 180px;
+            background: -webkit-radial-gradient(circle, rgba(255, 153, 0, 0.05), transparent);
+            background: -moz-radial-gradient(circle, rgba(255, 153, 0, 0.05), transparent);
             background: radial-gradient(circle, rgba(255, 153, 0, 0.05), transparent);
         }
 
@@ -639,13 +733,21 @@
         }
 
         .personal-skill {
+            background: rgba(44, 62, 80, 0.8);
             background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 1rem;
             text-align: center;
             transition: all 0.3s ease;
+        }
+        
+        @supports not (backdrop-filter: blur(10px)) {
+            .personal-skill {
+                background: rgba(44, 62, 80, 0.8);
+            }
         }
 
         .personal-skill:hover {
@@ -821,6 +923,7 @@
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.5rem;">
                         <i class="fas fa-university me-2"></i>Information Technology Institute (ITI), Tanta Branch
                     </p>
+                    <p style="color: rgba(255,255,255,0.7);">
                         <i class="fas fa-calendar-alt me-2"></i>March 2025 – July 2025
                     </p>
                     <p>Comprehensive training in modern .NET technologies, covering both frontend and backend development with hands-on projects and real-world applications.</p>
@@ -1066,7 +1169,7 @@
     <footer style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.2); padding: 2rem 0; text-align: center;">
         <div class="container">
             <p style="margin: 0; color: rgba(255,255,255,0.8);">
-                &copy; 2025 Ahmed Basioni EL-Khateeb .
+                &copy; 2025 Ahmed Basioni EL-Khateeb. Built with passion and precision.
             </p>
             <p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.6); font-size: 0.9rem;">
                 <i class="fas fa-heart" style="color: var(--amazon-orange);"></i> Made with love using .NET technologies
